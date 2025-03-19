@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Starting Build Stage'
-                sh 'echo Build simulation'
+                sh 'cd main && make'
                 echo 'Build Stage Successful'
             }
         }
@@ -13,7 +13,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running Tests'
-                sh 'echo Test simulation - No mvn required'
                 echo 'Test Stage Successful'
             }
             post {
@@ -26,7 +25,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying Application'
-                sh 'echo Deploy simulation'
                 echo 'Deployment Successful'
             }
         }
